@@ -45,5 +45,15 @@ Note: Typesetter.css is designed for standards-compliant web-browsers; to put yo
 
 ...and if you're unsure, it's a good idea to run your HTML through the [HTML5 validator][2] to catch any markup errors that might cause your browser to get confused.
 
+Development
+===========
+
+Note that `output/typesetter.css` is generated from `src/typesetter.less` via
+the [LESS][3] CSS pre-processor. If you want to submit patches, please edit the
+`src/typesetter.less` file rather than the output file. LESS version 1.3 or
+higher is required, since older versions seem to mess up the formatting of
+negative numbers.
+
 [1]: example/demo.html
 [2]: http://validator.nu/
+[3]: http://lesscss.org/

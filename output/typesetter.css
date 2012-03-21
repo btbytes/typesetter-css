@@ -24,7 +24,8 @@ html {
 :visited:hover {
   color: #A3A;
 }
-:link:active, :visited:active {
+:link:active,
+:visited:active {
   color: #E33;
 }
 body {
@@ -75,16 +76,19 @@ address,
 table {
   margin: 1.2rem 0;
 }
-li p:first-child, dd p:first-child {
+li p:first-child,
+dd p:first-child {
   margin-top: 0;
 }
-li p:last-child, dt p:last-child {
+li p:last-child,
+dt p:last-child {
   margin-bottom: 0;
 }
 p + p {
   text-indent: 1.2rem;
 }
-ul, ol {
+ul,
+ol {
   padding-left: 0;
   margin-left: 2.4em;
 }
@@ -124,14 +128,17 @@ tfoot th,
 tfoot td {
   line-height: 1.1rem;
 }
-td, th {
+td,
+th {
   font-size: 80%;
   padding: 0 0.6rem;
 }
-td:first-child, th:first-child {
+td:first-child,
+th:first-child {
   padding-left: 0;
 }
-td:last-child, th:last-child {
+td:last-child,
+th:last-child {
   padding-right: 0;
 }
 tr:nth-child(even) {
@@ -145,7 +152,7 @@ pre {
 hr {
   color: inherit;
   margin: 1.2rem 0;
-  margin-top: -0.1 rem;
+  margin-top: -0.1rem;
   padding: 0;
   border: none;
   border-top: 0.1rem solid currentColor;
@@ -156,17 +163,19 @@ aside {
   float: right;
   margin: 1.2rem;
   width: 10rem;
-  margin-right: -13.6 rem;
+  margin-right: -13.6rem;
   font-size: 0.8rem;
   line-height: 1.2rem;
   padding: 0 1.2rem;
   outline: 1px solid currentColor;
 }
-aside h1, aside h2 {
+aside h1,
+aside h2 {
   font-size: 1.0rem;
   line-height: 1.2rem;
 }
-aside h3, aside h4 {
+aside h3,
+aside h4 {
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
