@@ -4,13 +4,20 @@
 @foreground: #333350;
 @shaded_bg: rgba(0, 0, 0, 0.1);
 
+@line: 1.2rem;
+@hairline: 0.1rem;
+@smallfont: 0.80rem;
+
+@bodywidth: 35rem;
+@asidewidth: 0.3 * @bodywidth;
+
 @import "normalize.css";
 
 html {
     background: @background;
     color:      @foreground;
     font-size: 1em;
-    line-height: 1.2em;
+    line-height: @line;
 
     text-align: justify;
     -moz-hyphens: auto;
@@ -26,33 +33,46 @@ html {
 :link:active, :visited:active { color: #E33; }
 
 body {
-    width: 35em;
+    width: @bodywidth;
     margin-left: auto;
     margin-right: auto;
     position: relative;
 }
 
-h1 { margin: 1.2rem 0; font-size: 2.4rem; line-height: 3.6rem; text-align: center; }
-h2 { margin: 1.2rem 0; font-size: 1.8rem; line-height: 2.3rem; border-bottom: 0.1rem solid currentColor; }
-h3 { margin: 1.2rem 0; font-size: 1.4rem; line-height: 2.3rem; border-bottom: 0.1rem solid currentColor; }
-h4 { margin: 1.2rem 0; font-size: 1.2rem; line-height: 1.2rem; }
-h5 { margin: 1.2rem 0; font-size: 1.0rem; line-height: 1.2rem; }
-h6 { margin: 1.2rem 0; font-size: 0.8rem; line-height: 1.2rem; }
+h1, h2, h3, h4, h5, h6 { margin: @line 0; }
 
-p, div, ul, ol, blockquote, address, table { margin: 1.2rem 0; }
+h1 {
+    line-height: 3 * @line;
+}
+h2, h3 {
+    line-height: 2 * @line - @hairline;
+    border-bottom: @hairline solid currentColor;
+}
+h4, h5, h6 {
+    line-height: @line;
+}
+
+h1 { font-size: 2.00 * @line; text-align: center; }
+h2 { font-size: 1.50 * @line; }
+h3 { font-size: 1.25 * @line; }
+h4 { font-size: 1.00 * @line; }
+h5 { font-size: 0.80 * @line; }
+h6 { font-size: 0.66 * @line; }
+
+p, div, ul, ol, blockquote, address, table, pre { margin: @line 0; }
 
 li p:first-child, dd p:first-child { margin-top: 0; }
 li p:last-child, dt p:last-child { margin-bottom: 0; }
 
-p+p { text-indent: 1.2rem; }
+p+p { text-indent: @line; }
 
 ul, ol {
     padding-left: 0;
-    margin-left: 2.4em;
+    margin-left: 2 * @line;
 }
 
-dt { font-weight: bolder; margin-top: 1.2rem; }
-dd { margin-bottom: 1.2rem; margin-left: 1.2rem; }
+dt { font-weight: bolder; margin-top: @line; }
+dd { margin-bottom: @line; margin-left: @line; }
 
 blockquote {
     /*
@@ -61,52 +81,59 @@ blockquote {
      * background will be nicely separate.
      */
     overflow: hidden;
-    padding: 0 1.2rem;
-    border-radius: 0.6rem;
+    padding: 0 @line;
+    border-radius: @line / 2;
     background: @shaded_bg;
 }
 
 table { margin-left: auto; margin-right: auto; }
-thead { border-bottom: 0.1rem solid black; }
-tfoot { border-top: 0.1rem solid black; }
-thead th, thead td, tfoot th, tfoot td { line-height: 1.1rem; }
-td, th { font-size: 80%; padding: 0 0.6rem; }
+
+thead { border-bottom: @hairline solid currentColor; }
+tfoot { border-top:    @hairline solid currentColor; }
+thead, tfoot {
+    th, td {
+	line-height: @line - @hairline;
+    }
+}
+
+td, th { font-size: @smallfont; padding: 0 (@line / 2); }
 td:first-child, th:first-child { padding-left: 0; }
 td:last-child, th:last-child { padding-right: 0; }
+
 tr:nth-child(even) { background: @shaded_bg; }
 
 pre {
-    padding: 1.2rem 0;
-    border-left: 0.1rem solid currentColor;
-    padding-left: 1.1rem;
+    padding: @line 0;
+    border-left: @hairline solid currentColor;
+    padding-left: @line - @hairline;
 }
 
 hr {
     color: inherit;
-    margin: 1.2rem 0;
-    margin-top: -0.1rem;
+    margin: @line 0;
+    margin-top: -1 * @hairline;
     padding: 0;
     border: none;
-    border-top: 0.1rem solid currentColor;
+    border-top: @hairline solid currentColor;
     height: 0;
 }
 
 aside {
     clear: right;
     float: right;
-    margin: 1.2rem;
-    width: 10rem;
-    margin-right: -13.6rem;
+    margin: @line;
+    width: @asidewidth;
+    margin-right: 0 - @line - @line - @asidewidth - @line;
 
-    font-size: 0.8rem;
-    line-height: 1.2rem;
+    font-size: @smallfont;
+    line-height: @line;
 
-    padding: 0 1.2rem;
-    outline: 1px solid currentColor;
+    padding: 0 @line;
+    outline: @hairline solid currentColor;
+
+    h1, h2 { font-size: 0.8 * @line; line-height: @line; }
+    h3, h4 { font-size: 0.6 * @line; line-height: @line; }
 }
 
-aside h1, aside h2 { font-size: 1.0rem; line-height: 1.2rem; }
-aside h3, aside h4 { font-size: 0.8rem; line-height: 1.2rem; }
-
 /* Special support for footnotes from Pandoc */
-div.footnotes { font-size: 80%; }
+div.footnotes { font-size: @smallfont; }
