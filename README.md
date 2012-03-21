@@ -31,11 +31,13 @@ Usage
 
 To use Typesetter.css, follow these instructions:
 
-First, copy `typesetter.css` and `normalize.css` to a convenient place in your documentation tree.
+First, copy the contents of the `output` directory to a convenient place in your documentation tree.
 
 Then, add the following markup to the `<head>` element of each HTML document you want rendered with Typesetter.css:
 
     <link rel="stylesheet" href="typesetter.css">
+
+Make sure the `href` attribute points to the actual location of `typesetter.css`!
 
 Note: Typesetter.css is designed for standards-compliant web-browsers; to put your browser into the most standards-compliant rendering mode it has, make sure the HTML starts with the HTML5 doctype:
 
@@ -43,5 +45,5 @@ Note: Typesetter.css is designed for standards-compliant web-browsers; to put yo
 
 ...and if you're unsure, it's a good idea to run your HTML through the [HTML5 validator][2] to catch any markup errors that might cause your browser to get confused.
 
-[1]: demo.html
+[1]: example/demo.html
 [2]: http://validator.nu/
