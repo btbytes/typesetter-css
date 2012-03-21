@@ -1,10 +1,14 @@
 /* Typesetter.css Ⓒ2012 Timothy Allen | https://gitorious.org/typesetter-css/ */
 
+@background: #fffcf0;
+@foreground: #333350;
+@shaded_bg: rgba(0, 0, 0, 0.1);
+
 @import "normalize.css";
 
 html {
-    background: #fffcf0;
-    color:      #333350;
+    background: @background;
+    color:      @foreground;
     font-size: 1em;
     line-height: 1.2em;
 
@@ -16,7 +20,7 @@ html {
 }
 
 :link { color: #55C; }
-:link:hover { color: #33E; background: rgba(0, 0, 0, 0.1); }
+:link:hover { color: #33E; background: @shaded_bg; }
 :visited { color: #848; }
 :visited:hover { color: #A3A; }
 :link:active, :visited:active { color: #E33; }
@@ -59,7 +63,7 @@ blockquote {
     overflow: hidden;
     padding: 0 1.2rem;
     border-radius: 0.6rem;
-    background: rgba(0, 0, 0, 0.1);
+    background: @shaded_bg;
 }
 
 table { margin-left: auto; margin-right: auto; }
@@ -69,7 +73,7 @@ thead th, thead td, tfoot th, tfoot td { line-height: 1.1rem; }
 td, th { font-size: 80%; padding: 0 0.6rem; }
 td:first-child, th:first-child { padding-left: 0; }
 td:last-child, th:last-child { padding-right: 0; }
-tr:nth-child(even) { background: rgba(0, 0, 0, 0.1); }
+tr:nth-child(even) { background: @shaded_bg; }
 
 pre {
     padding: 1.2rem 0;
