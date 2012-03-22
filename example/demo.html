@@ -8,7 +8,7 @@
 
         <!-- Specifically for the demo, let's give ourself some grid-lines and
         mess with the default font size to make sure the two stay in sync. -->
-        <style type="text/css">
+        <style id="stripes" type="text/css">
             /* <![CDATA[ */
             html {
                 background-image: -webkit-linear-gradient(bottom,
@@ -23,6 +23,22 @@
             }
             /* ]]> */
         </style>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                var label = document.getElementById("toggle");
+                label.innerHTML = (
+                        "You can <a href='#'>toggle</a> them on and off."
+                    );
+                var toggle = label.getElementsByTagName("a")[0];
+                var stripes = document.getElementById("stripes");
+
+                toggle.onclick = function() {
+                    stripes.disabled = !stripes.disabled;
+                    return false;
+                };
+            };
+        </script>
     </head>
     <body>
         <h1>Typesetter Demo</h1>
@@ -30,6 +46,10 @@
         <p>This is a demonstration of the Typesetter stylesheet, which is
         designed to take your ordinary HTML documents and make them more
         visually appealing.</p>
+
+        <p>The stripes in the background are to check the vertical rhythm, and
+        are not part of the Typesetter stylesheet proper. <span id="toggle">You
+        can safely ignore them.</span></p>
 
         <aside>
             <h2>Here's some sidebar content!</h2>
