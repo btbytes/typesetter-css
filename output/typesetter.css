@@ -171,26 +171,45 @@ hr {
   border-top: 0.1rem solid currentColor;
   height: 0;
 }
-aside {
-  clear: right;
-  float: right;
+aside,
+nav {
   margin: 1.2rem;
+  margin-top: 0;
   width: 10.5rem;
-  margin-right: -14.1rem;
   font-size: 0.8rem;
   line-height: 1.2rem;
   padding: 0 1.2rem;
   outline: 0.1rem solid currentColor;
 }
 aside h1,
-aside h2 {
+nav h1,
+aside h2,
+nav h2 {
   font-size: 0.96rem;
   line-height: 1.2rem;
 }
 aside h3,
-aside h4 {
+nav h3,
+aside h4,
+nav h4 {
   font-size: 0.72rem;
   line-height: 1.2rem;
+}
+aside {
+  clear: right;
+  float: right;
+  margin-right: -14.1rem;
+}
+nav {
+  clear: left;
+  float: left;
+  margin-left: -14.1rem;
+}
+nav ul {
+  margin-left: 0;
+}
+nav ul ul {
+  margin-left: 1.2rem;
 }
 /* Special support for footnotes from Pandoc */
 div.footnotes {

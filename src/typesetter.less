@@ -119,12 +119,10 @@ hr {
     height: 0;
 }
 
-aside {
-    clear: right;
-    float: right;
+aside, nav {
     margin: @line;
+    margin-top: 0;
     width: @asidewidth;
-    margin-right: 0 - @line - @line - @asidewidth - @line;
 
     font-size: @smallfont;
     line-height: @line;
@@ -135,6 +133,21 @@ aside {
     h1, h2 { font-size: 0.8 * @line; line-height: @line; }
     h3, h4 { font-size: 0.6 * @line; line-height: @line; }
 }
+
+aside {
+    clear: right;
+    float: right;
+    margin-right: 0 - @line - @line - @asidewidth - @line;
+}
+
+nav {
+    clear: left;
+    float: left;
+    margin-left: 0 - @line - @line - @asidewidth - @line;
+}
+
+nav ul { margin-left: 0; }
+nav ul ul { margin-left: @line; }
 
 /* Special support for footnotes from Pandoc */
 div.footnotes { font-size: @smallfont; }
