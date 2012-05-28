@@ -1,9 +1,5 @@
 /* Typesetter.css Ⓒ2012 Timothy Allen | https://gitorious.org/typesetter-css/ */
 
-@background: #fffcf0;
-@foreground: #333350;
-@shaded_bg: rgba(0, 0, 0, 0.1);
-
 @line: 1.2rem;
 @hairline: 0.1rem;
 @smallfont: 0.80rem;
@@ -11,11 +7,7 @@
 @bodywidth: 35rem;
 @asidewidth: 0.3 * @bodywidth;
 
-@import "normalize.css";
-
 html {
-    background: @background;
-    color:      @foreground;
     font-size: 1em;
     line-height: @line;
 
@@ -25,12 +17,6 @@ html {
     -ms-hyphens: auto;
     hyphens: auto;
 }
-
-:link { color: #55C; }
-:link:hover { color: #33E; background: @shaded_bg; }
-:visited { color: #848; }
-:visited:hover { color: #A3A; }
-:link:active, :visited:active { color: #E33; }
 
 body {
     width: @bodywidth;
@@ -76,15 +62,7 @@ dt { font-weight: bolder; margin-top: @line; }
 dd { margin-bottom: @line; margin-left: @line; }
 
 blockquote {
-    /*
-     * This overflow setting prevents the margins on blockquote's contents from
-     * collapsing with blockquote's siblings, which means our border and
-     * background will be nicely separate.
-     */
-    overflow: hidden;
     padding: 0 @line;
-    border-radius: @line / 2;
-    background: @shaded_bg;
 }
 
 table { margin-left: auto; margin-right: auto; }
@@ -100,8 +78,6 @@ thead, tfoot {
 td, th { font-size: @smallfont; padding: 0 (@line / 2); }
 td:first-child, th:first-child { padding-left: 0; }
 td:last-child, th:last-child { padding-right: 0; }
-
-tr:nth-child(even) { background: @shaded_bg; }
 
 pre {
     padding: @line 0;
@@ -144,10 +120,15 @@ nav {
     clear: left;
     float: left;
     margin-left: 0 - @line - @line - @asidewidth - @line;
-}
 
-nav ul { margin-left: 0; }
-nav ul ul { margin-left: @line; }
+    ul {
+	margin-left: 0;
+
+	ul {
+	    margin-left: @line;
+	}
+    }
+}
 
 /* Special support for footnotes from Pandoc */
 div.footnotes { font-size: @smallfont; }

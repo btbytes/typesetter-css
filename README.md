@@ -48,11 +48,11 @@ Note: Typesetter.css is designed for standards-compliant web-browsers; to put yo
 Development
 ===========
 
-Note that `output/typesetter.css` is generated from `src/typesetter.less` via
+Note that `output/typesetter*.css` is generated from `src/typesetter*.less` via
 the [LESS][3] CSS pre-processor. If you want to submit patches, please edit the
-`src/typesetter.less` file rather than the output file. LESS version 1.3 or
-higher is required, since older versions seem to mess up the formatting of
-negative numbers.
+source files rather than the output files. LESS version 1.3 or higher is
+required, since older versions seem to mess up the formatting of negative
+numbers.
 
 [1]: example/demo.html
 [2]: http://validator.nu/

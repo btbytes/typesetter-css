@@ -1,0 +1,185 @@
+/* Typesetter.css Ⓒ2012 Timothy Allen | https://gitorious.org/typesetter-css/ */
+html {
+  font-size: 1em;
+  line-height: 1.2rem;
+  text-align: justify;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+body {
+  width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.2rem 0;
+}
+h1 {
+  line-height: 3.5999999999999996rem;
+}
+h2,
+h3 {
+  line-height: 2.3rem;
+  border-bottom: 0.1rem solid currentColor;
+}
+h4,
+h5,
+h6 {
+  line-height: 1.2rem;
+}
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1.7999999999999998rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 0.96rem;
+}
+h6 {
+  font-size: 0.792rem;
+}
+p,
+div,
+ul,
+ol,
+blockquote,
+address,
+table,
+pre {
+  margin: 1.2rem 0;
+}
+li p:first-child,
+dd p:first-child {
+  margin-top: 0;
+}
+li p:last-child,
+dt p:last-child {
+  margin-bottom: 0;
+}
+p + p {
+  text-indent: 1.2rem;
+}
+ul,
+ol {
+  padding-left: 0;
+  margin-left: 2.4rem;
+}
+li ul,
+li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+dt {
+  font-weight: bolder;
+  margin-top: 1.2rem;
+}
+dd {
+  margin-bottom: 1.2rem;
+  margin-left: 1.2rem;
+}
+blockquote {
+  padding: 0 1.2rem;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+thead {
+  border-bottom: 0.1rem solid currentColor;
+}
+tfoot {
+  border-top: 0.1rem solid currentColor;
+}
+thead th,
+tfoot th,
+thead td,
+tfoot td {
+  line-height: 1.0999999999999999rem;
+}
+td,
+th {
+  font-size: 0.8rem;
+  padding: 0 0.6rem;
+}
+td:first-child,
+th:first-child {
+  padding-left: 0;
+}
+td:last-child,
+th:last-child {
+  padding-right: 0;
+}
+pre {
+  padding: 1.2rem 0;
+  border-left: 0.1rem solid currentColor;
+  padding-left: 1.0999999999999999rem;
+}
+hr {
+  color: inherit;
+  margin: 1.2rem 0;
+  margin-top: -0.1rem;
+  padding: 0;
+  border: none;
+  border-top: 0.1rem solid currentColor;
+  height: 0;
+}
+aside,
+nav {
+  margin: 1.2rem;
+  margin-top: 0;
+  width: 10.5rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  padding: 0 1.2rem;
+  outline: 0.1rem solid currentColor;
+}
+aside h1,
+nav h1,
+aside h2,
+nav h2 {
+  font-size: 0.96rem;
+  line-height: 1.2rem;
+}
+aside h3,
+nav h3,
+aside h4,
+nav h4 {
+  font-size: 0.72rem;
+  line-height: 1.2rem;
+}
+aside {
+  clear: right;
+  float: right;
+  margin-right: -14.1rem;
+}
+nav {
+  clear: left;
+  float: left;
+  margin-left: -14.1rem;
+}
+nav ul {
+  margin-left: 0;
+}
+nav ul ul {
+  margin-left: 1.2rem;
+}
+/* Special support for footnotes from Pandoc */
+div.footnotes {
+  font-size: 0.8rem;
+}

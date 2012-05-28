@@ -1,0 +1,28 @@
+/* Typesetter.css Ⓒ2012 Timothy Allen | https://gitorious.org/typesetter-css/ */
+
+@background: #fffcf0;
+@foreground: #333350;
+@shaded_bg: rgba(0, 0, 0, 0.1);
+
+html {
+    background: @background;
+    color:      @foreground;
+}
+
+:link { color: #55C; }
+:link:hover { color: #33E; background: @shaded_bg; }
+:visited { color: #848; }
+:visited:hover { color: #A3A; }
+:link:active, :visited:active { color: #E33; }
+
+blockquote {
+    /*
+     * This overflow setting prevents the margins on blockquote's contents from
+     * collapsing with blockquote's siblings, which means our border and
+     * background will be nicely separate.
+     */
+    overflow: hidden;
+    background: @shaded_bg;
+}
+
+tr:nth-child(even) { background: @shaded_bg; }
