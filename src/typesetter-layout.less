@@ -1,11 +1,11 @@
 /* Typesetter.css Ⓒ2012 Timothy Allen | https://gitorious.org/typesetter-css/ */
 
-@line: 1.2rem;
-@hairline: 0.1rem;
-@smallfont: 0.80rem;
+@line: 1.25rem;
+@hairline: 0.125rem;
+@smallfont: 0.75rem;
 
 @bodywidth: 35rem;
-@asidewidth: 0.3 * @bodywidth;
+@asidewidth: 10rem;
 
 html {
     font-size: 1em;
@@ -27,23 +27,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 { margin: @line 0; }
 
-h1 {
-    line-height: 3 * @line;
-}
-h2, h3 {
-    line-height: 2 * @line - @hairline;
-    border-bottom: @hairline solid currentColor;
-}
-h4, h5, h6 {
-    line-height: @line;
-}
+h1 { font-size: 2.00 * @line; line-height: 3.0 * @line; text-align: center; }
+h2 { font-size: 1.50 * @line; line-height: 1.0 * @line; }
+h3 { font-size: 1.25 * @line; line-height: 1.0 * @line; }
+h4 { font-size: 1.00 * @line; line-height: 1.0 * @line; }
+h5 { font-size: 0.75 * @line; line-height: 1.0 * @line; }
+h6 { font-size: 0.50 * @line; line-height: 1.0 * @line; }
 
-h1 { font-size: 2.00 * @line; text-align: center; }
-h2 { font-size: 1.50 * @line; }
-h3 { font-size: 1.25 * @line; }
-h4 { font-size: 1.00 * @line; }
-h5 { font-size: 0.80 * @line; }
-h6 { font-size: 0.66 * @line; }
+h2, h3 {
+    padding-top: 0.5 * @line;
+    padding-bottom: 0.5 * @line - @hairline;
+    border-bottom: @hairline solid;
+}
 
 p, div, ul, ol, blockquote, address, table, pre { margin: @line 0; }
 
@@ -71,7 +66,7 @@ thead { border-bottom: @hairline solid currentColor; }
 tfoot { border-top:    @hairline solid currentColor; }
 thead, tfoot {
     th, td {
-	line-height: @line - @hairline;
+        line-height: @line - @hairline;
     }
 }
 
@@ -81,7 +76,7 @@ td:last-child, th:last-child { padding-right: 0; }
 
 pre {
     padding: @line 0;
-    border-left: @hairline solid currentColor;
+    border-left: @hairline solid;
     padding-left: @line - @hairline;
     font-size: 0.75rem;
 }
@@ -92,23 +87,31 @@ hr {
     margin-top: -1 * @hairline;
     padding: 0;
     border: none;
-    border-top: @hairline solid currentColor;
+    border-top: @hairline solid;
     height: 0;
 }
 
 aside, nav {
     margin: @line;
     margin-top: 0;
+    padding: 0 @line;
+    outline: @hairline solid;
+
     width: @asidewidth;
 
     font-size: @smallfont;
     line-height: @line;
 
-    padding: 0 @line;
-    outline: @hairline solid currentColor;
-
-    h1, h2 { font-size: 0.8 * @line; line-height: @line; }
-    h3, h4 { font-size: 0.6 * @line; line-height: @line; }
+    h1 { line-height: @line; }
+    h1 { font-size: 1rem; }
+    h2 { font-size: 0.875rem; }
+    h3 { font-size: 0.750rem; }
+    h2, h3 {
+        line-height: @smallfont;
+        padding-top: (@line - @smallfont) / 2;
+        padding-bottom: ((@line - @smallfont) / 2) - @hairline;
+        border-bottom: @hairline solid;
+    }
 }
 
 aside {
@@ -123,11 +126,11 @@ nav {
     margin-left: 0 - @line - @line - @asidewidth - @line;
 
     ul {
-	margin-left: 0;
+        margin-left: 0;
 
-	ul {
-	    margin-left: @line;
-	}
+        ul {
+            margin-left: @line;
+        }
     }
 }
 
