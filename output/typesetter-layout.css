@@ -141,11 +141,6 @@ hr {
 }
 aside,
 nav {
-  margin: 1.25rem;
-  margin-top: 0;
-  padding: 0 1.25rem;
-  outline: 0.125rem solid;
-  width: 10rem;
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
@@ -174,21 +169,75 @@ nav h3 {
   padding-bottom: 0.125rem;
   border-bottom: 0.125rem solid;
 }
-aside {
-  clear: right;
-  float: right;
-  margin-right: -13.75rem;
-}
+/* By default, navigation should appear inline */
 nav {
-  clear: left;
-  float: left;
-  margin-left: -13.75rem;
+  text-align: center;
+  /* Flatten the navigation hierarchy */
+
+  /* Use vertical bars to separate each item. */
+
 }
 nav ul {
   margin-left: 0;
 }
-nav ul ul {
-  margin-left: 1.25rem;
+nav ul,
+nav li {
+  display: inline;
+}
+nav ul li:first-child:before {
+  content: '';
+}
+nav ul li:before {
+  content: ' | ';
+}
+nav ul ul:before {
+  content: ' | ';
+}
+/*
+ * By default, asides should appear inline, but narrower because they have
+ * a smaller font size.
+ */
+aside {
+  width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* If we have sufficient width to put stuff on the sides... */
+@media (min-width: 62.5rem) {
+  aside,
+  nav {
+    margin: 1.25rem;
+    margin-top: 0;
+    padding: 0 1.25rem;
+    outline: 0.125rem solid;
+    width: 10rem;
+  }
+  aside {
+    clear: right;
+    float: right;
+    margin-right: -13.75rem;
+  }
+  nav {
+    text-align: left;
+    clear: left;
+    float: left;
+    margin-left: -13.75rem;
+    /* Now we have room to display the hierarchy */
+  
+  }
+  nav ul,
+  nav li {
+    display: block;
+  }
+  nav ul ul {
+    margin-left: 1.25rem;
+  }
+  nav ul li:before {
+    content: '';
+  }
+  nav ul ul:before {
+    content: '';
+  }
 }
 /* Special support for footnotes from Pandoc */
 div.footnotes {

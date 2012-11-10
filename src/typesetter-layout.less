@@ -92,13 +92,6 @@ hr {
 }
 
 aside, nav {
-    margin: @line;
-    margin-top: 0;
-    padding: 0 @line;
-    outline: @hairline solid;
-
-    width: @asidewidth;
-
     font-size: @smallfont;
     line-height: @line;
 
@@ -114,23 +107,63 @@ aside, nav {
     }
 }
 
-aside {
-    clear: right;
-    float: right;
-    margin-right: 0 - @line - @line - @asidewidth - @line;
+
+/* By default, navigation should appear inline */
+nav {
+    text-align: center;
+
+    /* Flatten the navigation hierarchy */
+    ul { margin-left: 0; }
+    ul, li { display: inline; }
+
+    /* Use vertical bars to separate each item. */
+    ul li:first-child:before { content: ''; }
+    ul li:before { content: ' | '; }
+    ul ul:before { content: ' | '; }
 }
 
-nav {
-    clear: left;
-    float: left;
-    margin-left: 0 - @line - @line - @asidewidth - @line;
+/*
+ * By default, asides should appear inline, but narrower because they have
+ * a smaller font size.
+ */
+aside {
+    width: @asidewidth + @asidewidth;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    ul {
-        margin-left: 0;
+/* If we have sufficient width to put stuff on the sides... */
+@asideoffset: @line + @line + @asidewidth + @line;
+@bodyWithAsides: @asideoffset + @bodywidth + @asideoffset;
+@media (min-width: @bodyWithAsides) {
 
-        ul {
-            margin-left: @line;
-        }
+    aside, nav {
+        margin: @line;
+        margin-top: 0;
+        padding: 0 @line;
+        outline: @hairline solid;
+
+        width: @asidewidth;
+    }
+
+    aside {
+        clear: right;
+        float: right;
+        margin-right: 0 - @asideoffset;
+    }
+
+    nav {
+        text-align: left;
+        clear: left;
+        float: left;
+        margin-left: 0 - @asideoffset;
+
+        /* Now we have room to display the hierarchy */
+        ul, li { display: block; }
+        ul ul { margin-left: @line; }
+
+        ul li:before { content: ''; }
+        ul ul:before { content: ''; }
     }
 }
 
