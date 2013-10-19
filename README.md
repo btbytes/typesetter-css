@@ -1,3 +1,5 @@
+Note: A fork of [Timothy Allen's typesetter-css](https://gitorious.org/typesetter-css/)
+
 Typesetter.css
 ==============
 
